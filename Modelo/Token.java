@@ -5,7 +5,7 @@
  */
 package Modelo;
 import lombok.Data;
-
+import org.joda.time.DateTime;
 /**
  *
  * @author Cliente
@@ -13,4 +13,7 @@ import lombok.Data;
 public @Data class Token {
     private int token;
     private int idUsuario;
+    private int idToken;
+    private DateTime data_validade;
+    
 }
