@@ -1,14 +1,14 @@
 --
 -- TIPO: 0 (venda), 1 (compra)
 --
--- OPERACAO: 0 (crÈdito), 1 (dÈbito), 2 (bloqueio), 3 (desbloqueio)
+-- OPERACAO: 0 (cr√©dito), 1 (d√©bito), 2 (bloqueio), 3 (desbloqueio)
 --
 -- STATUS: 0 (aberta), 1 (liquidada), 2 (cancelada)
 --
 
 
 --
--- SP PARA DEPURA«√O DE OUTRAS STORED PROCEDURES
+-- SP PARA DEPURA√á√ÉO DE OUTRAS STORED PROCEDURES
 --
 DROP PROCEDURE IF EXISTS Debug;
 DELIMITER //
@@ -67,7 +67,7 @@ DELIMITER ;
 
 
 --
--- SP PARA INCREMENTAR O N∫ DE LOGINS FALHOS FEITOS PELO USU¡RIO
+-- SP PARA INCREMENTAR O N¬∫ DE LOGINS FALHOS FEITOS PELO USU√ÅRIO
 --
 DROP PROCEDURE IF EXISTS IndicarLoginFalha;
 DELIMITER //
@@ -100,7 +100,7 @@ DELIMITER ;
 
 
 --
--- SP PARA EDITAR USU¡RIO
+-- SP PARA EDITAR USU√ÅRIO
 --
 DROP PROCEDURE IF EXISTS EditarUsuario;
 DELIMITER //
@@ -116,7 +116,7 @@ DELIMITER ;
 
 
 --
--- SP PARA EDITAR SENHA DO USU¡RIO
+-- SP PARA EDITAR SENHA DO USU√ÅRIO
 --
 DROP PROCEDURE IF EXISTS TrocarSenha;
 DELIMITER //
@@ -132,7 +132,7 @@ DELIMITER ;
 
 
 --
--- SP PARA REGISTRAR TRANSFER NCIA
+-- SP PARA REGISTRAR TRANSFER√äNCIA
 --
 DROP PROCEDURE IF EXISTS RegistrarTransferencia;
 DELIMITER //
@@ -154,13 +154,13 @@ DELIMITER ;
 
 
 --
--- SP PARA REGISTRAR CR…DITO DE PERSONAGEM
+-- SP PARA REGISTRAR CR√âDITO DE PERSONAGEM
 --
 DROP PROCEDURE IF EXISTS AdicionarPersonagem;
 DELIMITER //
 CREATE PROCEDURE AdicionarPersonagem(vIdUsuario INT, vIdPersonagem INT, vQuantidade INT)
 BEGIN
-	-- Vari·veis
+	-- Vari√°veis
 	DECLARE lTime INT;
 	DECLARE lPrecoUnitario INT;
 	
@@ -176,13 +176,13 @@ DELIMITER ;
 
 
 --
--- SP PARA REGISTRAR D…BITO DE PERSONAGEM
+-- SP PARA REGISTRAR D√âBITO DE PERSONAGEM
 --
 DROP PROCEDURE IF EXISTS RemoverPersonagem;
 DELIMITER //
 CREATE PROCEDURE RemoverPersonagem(vIdUsuario INT, vIdPersonagem INT, vQuantidade INT, OUT oErro INT)
 BEGIN
-	-- Vari·veis
+	-- Vari√°veis
 	DECLARE lTime INT;
 	DECLARE lSaldoDisponivel INT;
 	DECLARE lPrecoUnitario INT;	
@@ -212,7 +212,7 @@ DROP PROCEDURE IF EXISTS RegistraOrdemVenda;
 DELIMITER //
 CREATE PROCEDURE RegistraOrdemVenda(vIdUsuario INT, vIdPersonagem INT, vQuantidade INT, vPrecoUnitario FLOAT, OUT oErro INT)
 BEGIN
-	-- Vari·veis
+	-- Vari√°veis
 	DECLARE lIdOrdemVenda INT;
 	DECLARE lQuantidadeVenda INT;
 	DECLARE lIdOrdemCompra INT;
@@ -223,17 +223,17 @@ BEGIN
 	DECLARE lSaldoDisponivel INT;
 	DECLARE lAgora DATETIME;
 	
-	-- Controle de transaÁ„o
+	-- Controle de transa√ß√£o
 	-- DECLARE CONTINUE HANDLER FOR SQLEXCEPTION ROLLBACK;
 	-- START TRANSACTION;
 
 	-- Pega a data de agora
 	SET lAgora = now();
 	
-	-- Calcula o saldo disponÌvel do personagem
+	-- Calcula o saldo dispon√≠vel do personagem
 	CALL CalculaSaldoDisponivelPersonagem(vIdUsuario, vIdPersonagem, lSaldoDisponivel);
 
-	-- Verifica se o saldo disponÌvel permite a venda
+	-- Verifica se o saldo dispon√≠vel permite a venda
 	IF lSaldoDisponivel >= vQuantidade THEN
 		
 		-- Registra a oferta de venda
@@ -250,7 +250,7 @@ BEGIN
 		-- Guarda a quantidade vendida
 		SET lQuantidadeVenda = vQuantidade;
 	
-		-- Se houver oferta de compra com preÁo maior que a venda, executa
+		-- Se houver oferta de compra com pre√ßo maior que a venda, executa
 		REPEAT
 			SET lIdOrdemCompra = NULL;
 			
@@ -288,7 +288,7 @@ DROP PROCEDURE IF EXISTS RegistraOrdemCompra;
 DELIMITER //
 CREATE PROCEDURE RegistraOrdemCompra(vIdUsuario INT, vIdPersonagem INT, vQuantidade INT, vPrecoUnitario FLOAT, OUT oErro INT)
 lb_registro_ordem_compra: BEGIN
-	-- Vari·veis
+	-- Vari√°veis
 	DECLARE lIdOrdemVenda INT;
 	DECLARE lIdOrdemCompra INT;
 	DECLARE lQuantidadeCompra INT;
@@ -300,7 +300,7 @@ lb_registro_ordem_compra: BEGIN
 	DECLARE lValorTotal FLOAT;
 	DECLARE lSaldoDisponivel INT;
 
-	-- Controle de transaÁ„o
+	-- Controle de transa√ß√£o
 	-- DECLARE CONTINUE HANDLER FOR SQLEXCEPTION ROLLBACK;
 	-- START TRANSACTION;
 
@@ -335,7 +335,7 @@ lb_registro_ordem_compra: BEGIN
 	-- Guarda a quantidade comprada
 	SET lQuantidadeCompra = vQuantidade;
 
-	-- Se houver oferta de venda com preÁo menor que a venda, executa
+	-- Se houver oferta de venda com pre√ßo menor que a venda, executa
 	REPEAT
 		SET lIdOrdemVenda = NULL;
 
@@ -364,7 +364,7 @@ DELIMITER ;
 
 --
 -- SP PARA FAZER O SETTLEMENT ENTRE UMA COMPRA E UMA VENDA DE ACORDO COM SUAS QUANTIDADES
--- A SP n„o tem tratamento de transaÁıes porque deve ser usada apenas por outras SP
+-- A SP n√£o tem tratamento de transa√ß√µes porque deve ser usada apenas por outras SP
 -- ou em casos de teste do banco de dados.
 --
 
@@ -396,7 +396,7 @@ DELIMITER ;
 
 --
 -- SP PARA FAZER O SETTLEMENT ENTRE UMA COMPRA E UMA VENDA COM QUANTIDADES IGUAIS
--- A SP n„o tem tratamento de transaÁıes porque deve ser usada apenas por outras SP
+-- A SP n√£o tem tratamento de transa√ß√µes porque deve ser usada apenas por outras SP
 -- ou em casos de teste do banco de dados.
 --
 
@@ -426,7 +426,7 @@ DELIMITER ;
 
 --
 -- SP PARA FAZER O SETTLEMENT ENTRE UMA COMPRA E UMA VENDA QUANDO A VENDA TIVER QUANTIDADE MAIOR DO QUE A COMPRA
--- A SP n„o tem tratamento de transaÁıes porque deve ser usada apenas por outras SP
+-- A SP n√£o tem tratamento de transa√ß√µes porque deve ser usada apenas por outras SP
 -- ou em casos de teste do banco de dados.
 --
 
@@ -447,7 +447,7 @@ BEGIN
 	-- Calcula a quantidade restante da venda
 	SET lQuantidadeRestante = vQuantidadeVenda - vQuantidadeCompra;
 	
-	-- cria uma nova oferta de venda com a diferenca do que n„o foi vendido
+	-- cria uma nova oferta de venda com a diferenca do que n√£o foi vendido
 	INSERT INTO ofertas (data, tipo, idUsuario, idPersonagem, quantidade, quantidadeOriginal, idOrdemOriginal, precoUnitario, status)
 	SELECT data, 0, idUsuario, idPersonagem, lQuantidadeRestante, lQuantidadeRestante, vIdVenda, precoUnitario, 0
 	FROM ofertas
@@ -475,7 +475,7 @@ DELIMITER ;
 
 --
 -- SP PARA FAZER O SETTLEMENT ENTRE UMA COMPRA E UMA VENDA QUANDO A COMPRA TIVER QUANTIDADE MAIOR DO QUE A VENDA
--- A SP n„o tem tratamento de transaÁıes porque deve ser usada apenas por outras SP
+-- A SP n√£o tem tratamento de transa√ß√µes porque deve ser usada apenas por outras SP
 -- ou em casos de teste do banco de dados.
 --
 
@@ -490,7 +490,7 @@ BEGIN
 	-- Calcula a quantidade restante da compra
 	SET lQuantidadeRestante = vQuantidadeCompra - vQuantidadeVenda;
 
-	-- cria uma nova oferta de compra com a diferenÁa do que n„o foi vendido
+	-- cria uma nova oferta de compra com a diferen√ßa do que n√£o foi vendido
 	INSERT INTO ofertas (data, tipo, idUsuario, idPersonagem, quantidade, quantidadeOriginal, idOrdemOriginal, precoUnitario, status)
 	SELECT data, 1, idUsuario, idPersonagem, lQuantidadeRestante, lQuantidadeRestante, vIdCompra, precoUnitario, 0
 	FROM ofertas
@@ -524,7 +524,7 @@ BEGIN
 	SET status = 1
 	WHERE id = vIdVenda;
 	
-	-- Muda o ID da compra que est· sendo processada
+	-- Muda o ID da compra que est√° sendo processada
 	SET vIdCompraRestante = lNovoIdCompra;
 END //
 DELIMITER ;
@@ -553,7 +553,7 @@ BEGIN
 	INSERT INTO lancamentosDinheiro (data, idUsuario, operacao, historico, valor)
 	VALUES (lAgora, vIdUsuarioComprador, 1, CONCAT("Exec CP Venda #", vIdVenda, " Compra #", vIdCompra), lValorTotalNegociado);
 
-	-- Faz o depÛsito dos recursos financeiros na conta do vendedor
+	-- Faz o dep√≥sito dos recursos financeiros na conta do vendedor
 	INSERT INTO lancamentosDinheiro (data, idUsuario, operacao, historico, valor)
 	VALUES (lAgora, vIdUsuarioVendedor, 0, CONCAT("Exec CP Venda #", vIdVenda, " Compra #", vIdCompra), lValorTotalNegociado);
 
@@ -565,7 +565,7 @@ BEGIN
 	INSERT INTO lancamentosPersonagem (data, idUsuario, idPersonagem, operacao, historico, quantidade, precoUnitario)
 	VALUES (lAgora, vIdUsuarioVendedor, vIdPersonagem, 1, CONCAT("Exec VN Venda #", vIdVenda, " Compra #", vIdCompra), vQuantidadeNegociada, vPrecoVenda);
 
-	-- Faz o depÛsito do ativo na conta do comprador
+	-- Faz o dep√≥sito do ativo na conta do comprador
 	INSERT INTO lancamentosPersonagem (data, idUsuario, idPersonagem, operacao, historico, quantidade, precoUnitario)
 	VALUES (lAgora, vIdUsuarioComprador, vIdPersonagem, 0, CONCAT("Exec VN Venda #", vIdVenda, " Compra #", vIdCompra), vQuantidadeNegociada, vPrecoVenda);
 END //
@@ -586,7 +586,7 @@ BEGIN
 	DECLARE lQuantidade INT;
 	DECLARE lPrecoUnitario FLOAT;
 
-	-- Controle de transaÁ„o
+	-- Controle de transa√ß√£o
 	DECLARE CONTINUE HANDLER FOR SQLEXCEPTION ROLLBACK;
 	START TRANSACTION;
 	
@@ -627,7 +627,7 @@ BEGIN
 	DECLARE lPrecoUnitario FLOAT;
 	DECLARE lValorTotal FLOAT;
 
-	-- Controle de transaÁ„o
+	-- Controle de transa√ß√£o
 	DECLARE CONTINUE HANDLER FOR SQLEXCEPTION ROLLBACK;
 	START TRANSACTION;
 	
@@ -658,7 +658,7 @@ DELIMITER ;
 
 
 --
--- SP PARA CALCULAR O SALDO DISPONÕVEL EM UMA CONTA CORRENTE DE PERSONAGENS
+-- SP PARA CALCULAR O SALDO DISPON√çVEL EM UMA CONTA CORRENTE DE PERSONAGENS
 -- 
 
 DROP PROCEDURE IF EXISTS CalculaSaldoDisponivelPersonagem;
@@ -677,7 +677,7 @@ DELIMITER ;
 
 
 --
--- SP PARA CALCULAR O SALDO DISPONÕVEL EM UMA CONTA CORRENTE DE DINHEIRO
+-- SP PARA CALCULAR O SALDO DISPON√çVEL EM UMA CONTA CORRENTE DE DINHEIRO
 -- 
 
 DROP PROCEDURE IF EXISTS CalculaSaldoDisponivelDinheiro;
