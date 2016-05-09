@@ -18,7 +18,7 @@
         </header>
         
         <h1 style="text-align:center"> Bolsa de Valores de Gogos</h1>
-        <h3 style="text-align:center> Jonathan Costa, o Principe do Funk </h3>
+        
         <h2 style="text-align:center">Escolha uma operação:</h2>
         
         
