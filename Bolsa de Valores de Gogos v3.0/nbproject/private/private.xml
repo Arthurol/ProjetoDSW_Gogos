@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/OfertaDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/LancamentoPersonagemDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/web/criarOferta.jsp</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/test/NovoMain.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/Personagem.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/TransferenciaDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/interfaces/DAO/OfertaDAOInterface.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/TokenDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/Transferencia.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/TipoDeOferta.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/LancamentoDinheiro.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/PersonagemDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/Usuario.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/web/extrato.jsp</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/CasamentoDeOfertaDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/web/addSaldo.jsp</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/CasamentoDeOferta.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/interfaces/DAO/CasamentoDeOfertaDAOInterface.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/StatusDaOferta.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/TipoDeOperacao.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/Configurador.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/LancamentoPersonagem.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/Oferta.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/DAO/LancamentoDinheiroDAO.java</file>
+            <file>file:/C:/Users/Arthur/Desktop/Bolsa%20de%20Valores%20de%20Gogos%20v3.0/src/java/bolsaGogos/model/Token.java</file>
+        </group>
+    </open-files>
+</project-private>
