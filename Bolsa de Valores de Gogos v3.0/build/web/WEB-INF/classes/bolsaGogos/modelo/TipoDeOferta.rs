@@ -1,1 +1,0 @@
-bolsaGogosmodelo.TipoDeOferta

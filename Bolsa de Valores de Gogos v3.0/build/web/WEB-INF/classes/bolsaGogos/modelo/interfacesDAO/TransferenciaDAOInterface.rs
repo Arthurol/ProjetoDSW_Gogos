@@ -1,1 +1,0 @@
-bolsaGogosModeloInterfaces.TransferenciaDAOInterface
