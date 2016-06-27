@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="Messages" />
+
+	<package name="actions" extends="struts-default" namespace="/login">
+                 
+                <action name="index" method="homepage" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+                        <result name="input">/jsp/login/login.jsp </result>
+		</action>
+            
+                <action name="log" method="log" class="bolsaGogos.crud.actions.LoginAction" >
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+                        <result name="input">/jsp/login/login.jsp </result> 
+		</action> 
+                
+                <action name="logout" method="logout" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/login/login.jsp </result>
+                        <result name="input">/jsp/login/login.jsp </result>
+		</action>
+                
+                <action name="novo" method="novo" class="bolsaGogos.crud.actions.LoginAction">
+			<result>/jsp/login/novo.jsp </result>
+		</action>
+                
+                <action name="salva" method="salva" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success" type="chain" >transferenciaInicial</result>
+                        <result name="input">/jsp/login/novo.jsp </result>
+		</action>
+                
+                <action name="transferenciaInicial" method="transferenciaInicial" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success" >/jsp/login/login.jsp </result>
+		</action>
+                
+                <action name="preparaTrocaSenha" method="preparaTrocaSenha" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/usuario/trocaSenha.jsp </result>
+                        <result name="input">/jsp/login/login.jsp </result>
+		</action>
+
+                <action name="trocaSenha" method="trocaSenha" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/login/login.jsp </result>
+                        <result name="input">/jsp/usuario/trocaSenha.jsp </result>
+		</action>     
+                
+                <action name="preparaEnvioToken" method="preparaEnvioToken" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/reset/esqueceuSenha.jsp </result>
+		</action>
+                
+                <action name="envioToken" method="envioToken" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/reset/apresentaToken.jsp </result>
+                        <result name="input">/jsp/reset/esqueceuSenha.jsp </result>
+		</action>
+                
+                <action name="verificaTokenSenha" method="verificaTokenSenha" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/reset/resetSenha.jsp </result>
+                        <result name="input">/jsp/reset/apresentaToken.jsp </result>
+		</action>
+                     
+                <action name="executaResetSenha" method="executaResetSenha" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="input">/jsp/reset/resetSenha.jsp </result>
+                        <result name="success">/jsp/login/login.jsp </result>
+		</action>
+                
+                <action name="preparaEdicaoUsuario" method="preparaEdicaoUsuario" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/usuario/editaUsuario.jsp </result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="atualiza" method="atualiza" class="bolsaGogos.crud.actions.LoginAction">
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+                        <result name="input">/jsp/usuario/editaUsuario.jsp </result>
+		</action>
+                
+                <action name="preparaAdicaoPersonagem" method="preparaAdicaoPersonagem" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/personagens/adicionaGogo.jsp </result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="adicionaPersonagem" method="adicionaPersonagem" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="preparaCriacaoOferta" method="preparaCriacaoOferta" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/personagens/criaOferta.jsp </result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="processaOferta" method="processaOferta" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/usuario/homepage.jsp</result>
+                        <result name="input">/jsp/personagens/criaOferta.jsp </result>
+		</action>
+                
+                <action name="removeOferta" method="removeOferta" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success" type="chain">exibeOfertas</result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="exibeOfertas" method="exibeOfertas" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/personagens/mostraOfertas.jsp </result>
+                        <result name="input">/jsp/usuario/homepage.jsp </result>
+		</action>
+               
+                
+                <action name="imprimeExtratoDinheiro" method="imprimeExtratoDinheiro" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+		</action>
+                
+                <action name="imprimeExtratoPersonagens" method="imprimeExtratoPersonagens" class="bolsaGogos.crud.actions.OperacoesAction">
+			<result name="success">/jsp/usuario/homepage.jsp </result>
+		</action>
+              
+	</package>
+</struts>
